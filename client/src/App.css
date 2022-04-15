@@ -1,0 +1,160 @@
+body{
+   padding:0 !important;
+   margin:0 !important;
+   background: ghostwhite;
+}
+
+.header{
+   box-shadow: 0px 2px 2px grey;
+   padding:15px;
+   background: ghostwhite;
+}
+
+.header-title{
+   text-decoration: none;
+   font-size: 1.5em;
+   font-weight:bold;
+   color:#0575e6;
+}
+
+.fa-plus{
+   font-weight: bold;
+   font-size: 1.5em !important;
+}
+
+.contacts{
+   box-shadow: 0px 2px 2px grey;
+   padding:10px;
+   background: linear-gradient(to right, #000000, #434343);
+   color:white;
+   min-height:95vh;
+
+}  
+  
+.image-content{
+          background: linear-gradient(to right, #317eca91, #021c79a6), url('./images/pics/phone1.jpeg');
+        height: 70vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+
+  .text{
+     padding:10px;
+     text-decoration: none;
+     font-size: 1.2em;
+     font-weight:bold;
+     color:#0575e6;
+  }
+
+  .about-us{
+   background: linear-gradient(to right, #0575e6, #021b79);
+   padding:10px;
+   color:white;
+   box-shadow: 0px 2px 2px grey;
+   border-radius: 5px;
+   min-height: 30vh;
+}
+
+.info img{
+    width: 300px;
+    height: 300px;
+}
+.info{
+   padding:10px;
+}
+
+.map{
+   background: linear-gradient(to right, #000000da, #434343ef), url('./images/pics/map2.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 35vh;
+   color: white;
+   padding:10px;
+}
+
+.review-num{
+   font-weight: bold;
+}
+.head-info{
+     padding:5em;
+     color: white;
+}
+
+.head-info h5{
+   font-weight: bold;
+}
+
+.rating .fa-star{
+   font-size: 2em !important;
+   padding:5px;
+   color:#004e92;
+}
+.user-rate{
+   color:#004e92!important;
+}
+.pass{
+   font-size: 2em !important;
+   padding:10px;
+   font-weight: bold;
+  
+}
+.pass-one{
+   color: #004e92;
+}
+.pass-two{
+   color: grey;
+}
+.rate-text{
+       font-weight:bold;
+   }
+
+   .address{
+      font-weight:bold;
+   }
+
+   .infos h5{
+      font-weight: bold;
+   }
+   .percent{
+        color: grey;
+   }
+   .inquiry{
+        box-shadow: 0px 2px 2px grey;
+        border-radius: 10px;
+        background: linear-gradient(to right, #000000, #434343);
+
+   }
+   .contact-btn{
+      padding:5px;
+      box-shadow: 0px 2px 2px grey;
+      border-radius: 5px;
+      background: linear-gradient(to right, #0575e6, #021b79);
+      color: white;
+      font-weight:bold;
+   }
+   .footer{
+      padding:10px;
+      font-weight:bold;
+   }
+
+.mobile-nav{
+   position:absolute;
+   background: linear-gradient(to right, #0575e6, #021b79);
+   z-index:1;
+   padding:10px;
+   width:100%;
+   min-height:25%;
+}
+   .mobile-nav a{
+      display:block;
+      text-align: center;
+      color:white;
+   }
+
+
+   .fa-reorder, .fa-times{
+      color:#0575e6;
+      font-size: 1.5em !important;
+   }

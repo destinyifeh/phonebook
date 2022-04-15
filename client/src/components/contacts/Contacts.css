@@ -1,0 +1,100 @@
+.search-btn{
+    background: linear-gradient(to right, #0575e6, #021b79);
+    color: white;
+
+ }
+
+.search-form input{
+    border-radius:10px;
+}
+ 
+.create{
+    text-decoration: none;
+    background: linear-gradient(to right, #0575e6, #021b79);
+    color: white;
+  padding:5px;
+  box-shadow: 0px 2px 2px grey;
+   border-radius: 10px;
+   width:200px;
+   margin: auto;
+}
+
+.create:hover{
+    color:white;
+}
+.content{
+   background: linear-gradient(to right, #317dca, #021b79);
+   color: white;
+   box-shadow: 0px 2px 2px grey;
+  border-radius: 10px;
+}
+
+#add-form{
+    background: linear-gradient(to right, #000000, #434343);
+    padding:10px;
+
+}
+
+.plus{
+    border-radius: 50%;
+    padding:12px;
+    box-shadow: 0px 2px 2px grey;
+    height:50px;
+    width:50px;
+    text-decoration:none;
+    position:fixed;
+    bottom:20px;
+    background: linear-gradient(to right, #317dca, #021b79);
+
+}
+
+.pencil{
+    border-radius: 50%;
+    padding:12px;
+    box-shadow: 0px 2px 2px grey;
+    height:50px;
+    width:50px;
+    text-decoration:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background: linear-gradient(to right, #317dca, #021b79);
+    cursor:pointer;
+
+}
+.first-letter{
+    border-radius: 50%;
+    padding:12px;
+    box-shadow: 0px 2px 2px grey;
+    height:50px;
+    width:50px;
+    color:white;
+    font-weight: bold;
+    background: linear-gradient(to right, #317dca, #021b79);
+
+}
+
+.contacts-home{
+    padding:10px;
+    background: linear-gradient(to right, #000000, #434343);
+    min-height:100vh;
+}
+
+
+.call-link{
+    font-size:1.2em;
+    text-decoration: none;
+}
+.direct-link{
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.show-page{
+    text-transform: capitalize;
+};
+
+.plus-one{
+    font-weight:bold;
+    
+}
