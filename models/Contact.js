@@ -7,6 +7,7 @@ const ContactSchema = new Schema({
            
                 name:{type: String},
                phone:{type: String},
+                id:{type: String},
                createdAt:{type: Date, default: Date.now}
 
    });

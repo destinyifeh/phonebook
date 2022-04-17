@@ -50,14 +50,14 @@ const {id} = useParams();
         <div className="container-fluid d-md-flex justify-content-center mt-4 border-bottom">
             <div className=" col-sm-6 d-flex justify-content-around">
                <div className="text-center">
-               <a className="call-link" href={`tel:${phone?.slice(1)}`}>  
+               <a className="call-link" href={`tel:${phone}`}>  
                <i className="fa fa-phone "></i>
                <p>Call</p>
                </a>
 
                </div>
                <div className="text-center">
-               <a className="call-link" href={`sms:${phone?.slice(1)}`}>  
+               <a className="call-link" href={`sms:${phone}`}>  
 
                <i className="fa fa-envelope"></i>
                <p>Text</p>
@@ -65,7 +65,7 @@ const {id} = useParams();
 
                </div>
                <div className="text-center">
-               <a className="direct-link" href={`https://wa.me/${phone?.slice(1)}`}>
+               <a className="direct-link" href={`https://wa.me/234${phone?.slice(1)}`}>
 
                <i className="fa fa-whatsapp"></i>
                <p>Chat</p>
@@ -77,18 +77,18 @@ const {id} = useParams();
           
         </div>
         <div className="container-fluid border-bottom p-3">
-            <a className="direct-link" href={`phone:${phone?.slice(1)}`}>
+            <a className="direct-link" href={`phone:${phone}`}>
 
             <span className=""><i className="fa fa-phone"> Voice call {phone}</i></span>
             </a>
         </div>
         <div className="container-fluid border-bottom p-3">
-            <a className="direct-link" href={`sms:${phone?.slice(1)}`}>
+            <a className="direct-link" href={`sms:${phone}`}>
             <span className=""><i className="fa fa-envelope"> Message {phone}</i></span>
              </a>
         </div>
         <div className="container-fluid border-bottom p-3">
-            <a className="direct-link" href={`https://wa.me/${phone?.slice(1)}`}>
+            <a className="direct-link" href={`https://wa.me/234${phone?.slice(1)}`}>
 
             <span className=""><i className="fa fa-whatsapp"> Chat {phone}</i></span>
             </a>

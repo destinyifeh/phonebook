@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {fetchContacts, addSearches, fetchSearches, removeSearch, removeSearch2, noSearchResult, noSearchResult2, removeCont, removeCont2} from '../Redux/contactSlice';
+import { currentUser} from '../Redux/userSlice';
 
 import Header2 from '../Header2';
 import New from './New';
@@ -12,9 +13,10 @@ export default function Index(){
 
     const [showNew, setNew] = useState(false);
     const [query, setQuery] = useState('');
-   
    let dispatch = useDispatch();
-                                                                                                                                                        
+          
+   let id = currentUser._id;
+
      const contacts = useSelector(state=>state.contacts.contacts);
      const searches = useSelector(state=>state.contacts.searches);
      const removeIt = useSelector(state=>state.contacts.removeIt);
@@ -22,14 +24,13 @@ export default function Index(){
       const removeAll =useSelector(state=>state.contacts.removeContacts)
      
      console.log(contacts, 'state')
-
+      console.log(id, 'user logged in')
         const handleNew = () =>{
              setNew(true);
         };
 
 
         useEffect(()=>{
-             
             dispatch(fetchContacts());
             dispatch(fetchSearches());
         }, [dispatch]);
@@ -90,6 +91,8 @@ export default function Index(){
                   }
              } */
 
+
+
     return(
         <>
         <Header2 />
@@ -129,7 +132,8 @@ export default function Index(){
                 </div>
                 {removeAll?
                 <div className="container ">
-                    <h5 className="text-center text-white my-3 border-bottom">{contacts?.length} saved contacts available </h5>
+                    <h5 className="text-center text-white mt-3 border-bottom">{contacts?.length} saved contacts available </h5>
+                   <p className="text-secondary text-center mb-3">({currentUser?.email})</p>
                     {contacts.map(contact=>{
                         return(
                     <div className="text-center" key={contact._id}>

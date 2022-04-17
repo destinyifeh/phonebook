@@ -4,6 +4,7 @@ import {toast} from 'react-toastify';
 import './Contacts.css';
 import {useDispatch, useSelector} from 'react-redux';
 import {addContact} from '../Redux/contactSlice';
+import { currentUser} from '../Redux/userSlice';
 
 export default function New ({showNew, setNew}){
     console.log(showNew)
@@ -12,6 +13,7 @@ export default function New ({showNew, setNew}){
     const [phone, setPhone] = useState('');
 
      const dispatch = useDispatch();
+    
 
      const loading = useSelector(state=>state.contacts.loading);
   
@@ -39,7 +41,8 @@ export default function New ({showNew, setNew}){
           }else{
             const newContact = {
                 name,
-                phone
+                phone,
+                id:currentUser._id,
             }
             console.log(newContact)
             setPhone('');

@@ -2,6 +2,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 
+import { currentUser} from '../Redux/userSlice';
 
 
 
@@ -29,7 +30,8 @@ export const fetchContacts = createAsyncThunk(
 
        try{
            let response = await axios.get('/api/contacts')
-           return response.data;
+            let data = response.data.filter(contact=>contact.id === currentUser._id)
+           return data;
 
        }
        catch(err){
@@ -177,6 +179,7 @@ const initialState ={
           state.status ='fulfilled';
           state.contacts = payload;
           state.loading = false;
+         
 
        },
        [fetchContacts.rejected]:(state)=>{

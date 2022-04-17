@@ -12,7 +12,8 @@ router.post('/api/contact', async(req, res)=>{
 
       let newContact = {
           name: req.body.name,
-          phone: req.body.phone
+          phone: req.body.phone,
+          id: req.body.id,
       }
 
         console.log(newContact)
@@ -32,8 +33,10 @@ router.post('/api/contact', async(req, res)=>{
 
 router.get('/api/contacts', async(req, res)=>{
     try{
-          
-        let contact = await Contact.find({}).limit(3).sort({createdAt:-1})
+
+ 
+        let contact = await Contact.find({}).sort({createdAt:-1})
+        console.log(contact)
          return res.status(200).json(contact)
     }
     catch(err){
