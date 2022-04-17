@@ -9,7 +9,7 @@ dotenv.config();
 require('./config/Passport')(passport);
 
 
-const app = express();
+const server = express();
 
 mongoose.Promise = global.Promise;
 
@@ -34,11 +34,11 @@ if(process.env.NODE_ENV === 'production'){
     
 
 
-app.use(express.json());
+server.use(express.json());
 
-app.use(cors());
+server.use(cors());
 
-app.use(session({
+server.use(session({
      resave: false,
      secret: 'secret',
      saveUninitialized: false,
@@ -46,24 +46,24 @@ app.use(session({
 }));
 
 
-app.use(passport.initialize());
-app.use(passport.session());
+server.use(passport.initialize());
+server.use(passport.session());
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', require('./routes/User'));
-app.use('/', require('./routes/Contact'));
+server.use('/', require('./routes/User'));
+server.use('/', require('./routes/Contact'));
 
 //Serving the build index react file to server//
-app.use(express.static(path.join(__dirname, 'client/build')))
+server.use(express.static(path.join(__dirname, 'client/build')))
 
-app.get('*', (req, res)=>{
+server.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname,  'client', 'build', 'index.html'));
 }); 
     
 
-app.set('port', process.env.PORT || 5000);
-app.listen(app.get('port'), ()=>console.log('Server is running on port'+ " "+ app.get('port')));
+server.set('port', process.env.PORT || 5000);
+server.listen(server.get('port'), ()=>console.log('Server is running on port'+ " "+ server.get('port')));
 
