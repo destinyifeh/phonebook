@@ -129,7 +129,7 @@ export default function Index(){
                 </div>
                 {removeAll?
                 <div className="container ">
-                    <h5 className="text-center text-white my-3 border-bottom">233 saved contacts available </h5>
+                    <h5 className="text-center text-white my-3 border-bottom">{contacts?.length} saved contacts available </h5>
                     {contacts.map(contact=>{
                         return(
                     <div className="text-center" key={contact._id}>
