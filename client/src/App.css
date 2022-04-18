@@ -158,3 +158,26 @@ body{
       color:#0575e6;
       font-size: 1.5em !important;
    }
+
+   @media screen and (max-width:768px) {
+
+      .map{
+         background: linear-gradient(to right, #000000da, #434343ef), url('./images/pics/map2.png');
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         min-height:20vh;
+         color: white;
+         padding:10px;
+      }
+
+
+      .about-us{
+         background: linear-gradient(to right, #0575e6, #021b79);
+         padding:10px;
+         color:white;
+         box-shadow: 0px 2px 2px grey;
+         border-radius: 5px;
+         min-height: 20vh;
+      }
+   }

@@ -54,7 +54,7 @@ export const loginUser = createAsyncThunk(
 export const forgotUser = createAsyncThunk(
      'users/forgotUser', async(user, {rejectWithValue})=>{
           try{
-               let response = await axios.post('/api/user/forgot', user)
+               let response = await axios.post('/api/forgot/password', user)
                toast.success('success')
 
                 setTimeout(()=>{
@@ -106,14 +106,18 @@ export const resetUser = createAsyncThunk(
           const {id, user} = resetPassword;
           try{
                let response = await axios.post('/api/reset-password/'+id, user)
-               toast.success('Password changed')
-               setTimeout(()=>{
-                    window.locaton.href='/contacts'
-               })
-                return response.data;
+               sessionStorage.setItem('currentUser', JSON.stringify(response.data));
 
+               toast.success('Password changed')
+                 console.log(response.data, 'check')
+               
+                 setTimeout(()=>{
+                    window.location.href='/contacts';
+                     }, 1000)
+                    return response.data;
           }
           catch(err){
+               console.log(err.response)
                toast.error('Oops!, An error occurred, try again')
                return rejectWithValue(err.response)
           }

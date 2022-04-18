@@ -87,7 +87,7 @@ require('../models/User');
 
       router.post('/api/forgot/password', async(req, res)=>{
           try{
-
+               console.log(req.body)
             let user = await User.findOne({email: req.body.email})
                console.log(user)
               if(!user){
@@ -190,44 +190,47 @@ require('../models/User');
            user.resetPasswordToken = undefined;
            user.resetPasswordExpires = undefined;
              
-            await user.save( async(err)=>{
+               await user.save( async(err, user)=>{
                  if(err) return res.status(400).send('Error:'+ err)
-                 req.login(user, async(err)=>{
-                    if(err) return res.status(400).send('Error:'+ err)
-                    res.status(200).send('Password changed')
-          
+                
                  let transporter = nodemailer.createTransport({
-                host: 'smtp.gmail.com',
-                port: 465,
-                secure: true,
-                auth: {
-                  user: process.env.GMAIL_EMAIL,
-                  pass: process.env.GMAIL_PASS
-                },
-                tls:{
-                  rejectUnauthorized:false,
-                }
-            });
-            var mailOptions = {
-                to: user.email,
-                from: 'Phonebook <noreply.'+process.env.GMAIL_EMAIL+'>',
-                subject: 'Password Successfully Changed',
-                text: 'Hello,\n\n' +
-                  'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
-              };
-             
-              transporter.sendMail(mailOptions, function(err, info){
-              if(err) {
-                console.log(err);
-              }else{
-               console.log('Password reset email sent' + info.response)
-              }         
-                              
-            })
-            //New password email end     
-         })   
-         
-        })  
+                  host: 'smtp.gmail.com',
+                  port: 465,
+                  secure: true,
+                  auth: {
+                    user: process.env.GMAIL_EMAIL,
+                    pass: process.env.GMAIL_PASS
+                  },
+                  tls:{
+                    rejectUnauthorized:false,
+                  }
+              });
+              var mailOptions = {
+                  to: user.email,
+                  from: 'Phonebook <noreply.'+process.env.GMAIL_EMAIL+'>',
+                  subject: 'Password Successfully Changed',
+                  text: 'Hello,\n\n' +
+                    'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+                };
+               
+                transporter.sendMail(mailOptions, function(err, info){
+                if(err) {
+                  console.log(err);
+                }else{
+                 console.log('Password reset email sent' + info.response)
+                }         
+                                
+              })
+              //New password email end 
+          
+                   req.login(user, (err)=>{
+                      if(err) return res.status(400).send('Error:'+ " "+ err);
+          
+                       return res.send(user)
+
+                })
+                  
+            })  
            
        }
     }

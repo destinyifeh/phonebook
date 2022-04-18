@@ -77,7 +77,7 @@ export default function ResetCode(){
 
     <div className="form-group text-center">
      <label className="">Enter reset-code sent to your email</label>
-     <input className="form-control" type="email" value={resetPasswordToken} onChange={changeToken}/>
+     <input className="form-control" type="text" value={resetPasswordToken} onChange={changeToken}/>
     </div>
    
     <div className="form-group mt-3">

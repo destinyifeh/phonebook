@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import Roll from 'react-reveal/Roll';
 import {useSelector} from 'react-redux';
@@ -20,7 +20,7 @@ function Home(){
     const [firstName, setfirstName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-
+    const [sending, setSending] = useState(false);
 
 
 
@@ -38,9 +38,13 @@ function Home(){
    };
 
    const changeMessage = (e) =>{
+       console.log(e.target)
     setMessage(e.target.value);
 };
 
+const handleClick = (e) => {
+      setReg(true)
+};
     
         const onSubmit = async(e) =>{
             try{
@@ -73,8 +77,14 @@ function Home(){
                      message
                 }
                 console.log(messageBody);
+                setSending(true)
                let res = await axios.post('/api/message', messageBody)
                  console.log(res.data);
+                 setEmail('');
+                 setMessage('');
+                 setfirstName('');
+                 setSending(false)
+
                 toast.success('Message delivered');
           
                  
@@ -83,6 +93,8 @@ function Home(){
          catch(err){
             console.log(err.message)
             toast.error('Oops! An error occurred, try again')
+            setSending(false)
+
          }
         }
 
@@ -242,7 +254,7 @@ function Home(){
              <h5 className="text-center">About Us</h5>
              <p> Phonebook is a secure and user friendly platform for storing and backing up mobile contacts. Our aim is to ensure our users mobile contacts are highly secured and accessible by them at any time. </p>
               <p className="text-center">Join million of active users that uses this platfom</p>
-             <Link to="" className="create d-flex justify-content-center">Create account now</Link>
+             <a href="#top" className="create d-flex justify-content-center" onClick={handleClick}>Create account now</a>
              </Fade >
          </div>
           
@@ -264,10 +276,10 @@ function Home(){
                          </div>
                          <div className="form-group">
                              <label>Message</label>
-                           <textarea className="form-control" rows="5" placeholder="your message here..." value={message} oChange={changeMessage} />
+                           <textarea className="form-control" rows="5" placeholder="your message here..." value={message} onChange={changeMessage} />
                          </div>
                          <div className="form-group my-3">
-                         <button className="btn w-100 contact-btn" type="submit">Submit Message</button>
+                         <button className="btn w-100 contact-btn" type="submit">{sending? <span>Sending message <i className="fa fa-spinner fa-spin"></i></span>: 'Submit message'}</button>
 
                          </div>
                       </form>
