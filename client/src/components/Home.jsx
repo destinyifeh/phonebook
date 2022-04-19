@@ -272,7 +272,7 @@ const handleClick = (e) => {
                          </div>
                           <div className="form-group">
                           <label>Email</label>
-                      <input type="email" className="form-control" vale={email} onChange={changeEmail} />
+                      <input type="email" className="form-control" value={email} onChange={changeEmail} />
                          </div>
                          <div className="form-group">
                              <label>Message</label>

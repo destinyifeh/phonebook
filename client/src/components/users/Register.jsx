@@ -93,7 +93,6 @@ const handlePassword2 = (e) =>{
             <h5 className="text-center">Signup </h5>
             <i className="fa fa-times text-white" onClick={handleReg} style={{cursor: 'pointer'}}></i>
             </div>
-            {creating? <p className="text-center text-white">Registering....</p>: ''}
           <div className="form-group">
               <label>Email</label>
               <input className="form-control" type="email" value={email} onChange={handleEmail}/>
@@ -107,7 +106,7 @@ const handlePassword2 = (e) =>{
               <input className="form-control" type="password" value={password2} onChange={handlePassword2} />
              </div>
              <div className="form-group mt-3">
-                 <button className="w-100 user-btn">Proceed</button>
+                 <button className="w-100 user-btn">{creating? <span>Please wait <i className="fa fa-spinner fa-spin"></i></span>: 'Proceed'}</button>
              </div>
         </form>
         : ' '}

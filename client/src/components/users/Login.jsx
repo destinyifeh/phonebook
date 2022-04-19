@@ -80,7 +80,7 @@ export default function Login ({showLog, setLog}){
             <h5 className="text-center">Login </h5>
             <i className="fa fa-times text-white" onClick={handleLog} style={{cursor: 'pointer'}}></i>
             </div>
-           {creating? <p className="text-center text-white">Please wait....</p>: ''}
+            
 
             <div className="form-group">
               <label>Email</label>
@@ -92,7 +92,7 @@ export default function Login ({showLog, setLog}){
              </div>
             
              <div className="form-group mt-3">
-                 <button className="w-100 user-btn">Proceed</button>
+                 <button className="w-100 user-btn">{creating? <span>Please wait <i className="fa fa-spinner fa-spin"></i></span>: 'Proceed'}</button>
              </div>
              <div className="form-group d-flex justify-content-center mt-3">
                   <Link className="text-white" to="/user/forgot-password">Forgot password?</Link>

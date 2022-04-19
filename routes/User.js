@@ -14,7 +14,7 @@ require('../models/User');
  
    //Register route//
 
-   router.post('/api/user/register', async(req, res, next)=>{
+   router.post('/api/user/register', async(req, res)=>{
        try{
           console.log(req.body)
           let setPassword = await bcrypt.genSalt(10);
@@ -23,33 +23,31 @@ require('../models/User');
               email: req.body.email,
               password: securePassword
           }
-          console.log(newUser)
+             console.log(newUser)
 
-              let user = await User.create(newUser)
-                 console.log(user)
-             passport.authenticate('local', (err, user)=>{
-                console.log('user',user)
-                if(err) return res.send(err);
-                if(!user){
-                   return res.send('Incorrect password');
-                }else{
+               User.create(newUser, (err, user)=>{
+                 console.log(user, 'the user')
+                 if(err) return res.status(400).send('Error:'+ " "+ err);
+            
+                 req.login(user, (err)=>{
+                  if(err) return res.status(400).send('Error:'+ " "+ err);
+      
+                   return res.send(user);
+      
+              })
+              
+            })
+          
+
+
+        }
+       catch(err){
+         console.log(err.message)
+     }
+ })
                   
         
-                 req.login(user, (err)=>{
-                    if(err) return res.status(400).send('Error:'+ " "+ err);
-        
-                     return res.send(user);
-        
-                })
-                }
-            })(req, res, next)
-
-
-          }
-         catch(err){
-           console.log(err.message)
-       }
-   })
+                
 
 
 //Login route//
