@@ -253,7 +253,7 @@ const handleClick = (e) => {
 
              <h5 className="text-center">About Us</h5>
              <p> Phonebook is a secure and user friendly platform for storing and backing up mobile contacts. Our aim is to ensure our users mobile contacts are highly secured and accessible by them at any time. </p>
-              <p className="text-center">Join million of active users that uses this platfom</p>
+              <p className="text-center">Join million of active users that uses this platform</p>
              <a href="#top" className="create d-flex justify-content-center" onClick={handleClick}>Create account now</a>
              </Fade >
          </div>
