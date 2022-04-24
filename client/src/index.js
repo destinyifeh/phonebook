@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import '@fontsource/roboto';
 
 import 'popper.js/dist/popper.min.js';
 import 'jquery/dist/jquery.min.js';

@@ -14,6 +14,7 @@
   "author": "Dez",
   "license": "ISC",
   "dependencies": {
+    "@fontsource/roboto": "^4.5.5",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
