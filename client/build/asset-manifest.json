@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b412bee.chunk.css",
+    "main.js": "/static/js/main.961ae95b.chunk.js",
+    "main.js.map": "/static/js/main.961ae95b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.776c1e0d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.776c1e0d.js.map",
+    "static/css/2.42db9ab5.chunk.css": "/static/css/2.42db9ab5.chunk.css",
+    "static/js/2.9f0781c3.chunk.js": "/static/js/2.9f0781c3.chunk.js",
+    "static/js/2.9f0781c3.chunk.js.map": "/static/js/2.9f0781c3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.42db9ab5.chunk.css.map": "/static/css/2.42db9ab5.chunk.css.map",
+    "static/css/main.2b412bee.chunk.css.map": "/static/css/main.2b412bee.chunk.css.map",
+    "static/js/2.9f0781c3.chunk.js.LICENSE.txt": "/static/js/2.9f0781c3.chunk.js.LICENSE.txt",
+    "static/media/cloud.9fee83c7.png": "/static/media/cloud.9fee83c7.png",
+    "static/media/cus1.35cc7f0d.png": "/static/media/cus1.35cc7f0d.png",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/img3.9ec91cab.png": "/static/media/img3.9ec91cab.png",
+    "static/media/App.css": "/static/media/phone1.1c5cbb32.jpeg",
+    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.776c1e0d.js",
+    "static/css/2.42db9ab5.chunk.css",
+    "static/js/2.9f0781c3.chunk.js",
+    "static/css/main.2b412bee.chunk.css",
+    "static/js/main.961ae95b.chunk.js"
+  ]
+}
